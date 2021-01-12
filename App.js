@@ -1,5 +1,4 @@
 import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
 import FirstScreen from './src/screens/FirstScreen';
 import SecondScreen from './src/screens/SecondScreen';
 import ThirdScreen from './src/screens/ThirdScreen';
@@ -23,20 +22,7 @@ const navigator = createMaterialTopTabNavigator({
     screen: FifthScreen
   }
 })
-//   {
-//     First: FirstScreen,
-//     Second: SecondScreen,
-//     Third: ThirdScreen,
-//     Fourth: FourthScreen,
-//     Fifth: FifthScreen,
-//   },
-//   {
-//     initialRouteName: 'First',
-//     defaultNavigationOptions: {
-//       title: 'Task-6',
-//     },
-//   }
-// );
+
 
 
 export default createAppContainer(navigator);
