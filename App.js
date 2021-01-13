@@ -21,7 +21,16 @@ const navigator = createMaterialTopTabNavigator({
   Fifth: {
     screen: FifthScreen
   }
-})
+}, {
+  initialRouteName: 'First',
+  animationEnabled: true,
+  tabBarOptions: {
+    showIcon: false,
+    showLabel: false,
+    style: { height: 0 }
+  }
+}
+)
 
 
 

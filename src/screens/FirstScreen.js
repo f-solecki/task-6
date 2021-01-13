@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Button, Image, StyleSheet } from 'react-native';
+import { View, Text, Button, Image, StyleSheet, SafeAreaView, Platform } from 'react-native';
 
 const FirstScreen = (props) => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.title}>Welcome to our tour!</Text>
             <Image source={require('../images/first.png')} style={styles.image} />
             <View>
@@ -11,13 +11,14 @@ const FirstScreen = (props) => {
                 <Text style={{ marginTop: 15, fontSize: 18 }}>Click <Text style={{ color: '#9090ff' }}>'Next'</Text> button to start this tutorial.</Text>
             </View>
             <Button title='Next' onPress={() => props.navigation.navigate('Second')} />
-        </View>)
+        </SafeAreaView>)
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'space-between',
+        paddingTop: Platform.OS === 'android' ? 35 : 0
     },
     title: {
         fontSize: 40,

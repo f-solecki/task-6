@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Button, Image, StyleSheet } from 'react-native';
+import { View, Text, Button, Image, StyleSheet, SafeAreaView } from 'react-native';
 
 const FourthScreen = (props) => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.title}>Stack Navigator</Text>
             <Image source={require('../images/fourth.png')} style={styles.image} />
             <View>
@@ -13,13 +13,15 @@ const FourthScreen = (props) => {
             </View>
             <Button title='Next' onPress={() => props.navigation.navigate('Fifth')} />
 
-        </View>)
+        </SafeAreaView>)
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'space-between',
+        paddingTop: Platform.OS === 'android' ? 35 : 0
+
     },
     title: {
         fontSize: 40,

@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Button, Image, StyleSheet } from 'react-native';
+import { View, Text, Button, Image, StyleSheet, SafeAreaView } from 'react-native';
 
 const SecondScreen = (props) => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.title}>React Navigation</Text>
             <Image source={require('../images/second.jpg')} style={styles.image} />
             <View>
@@ -13,7 +13,7 @@ const SecondScreen = (props) => {
 
             </View>
             <Button title='Next' onPress={() => props.navigation.navigate('Third')} />
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'space-between',
+        paddingTop: Platform.OS === 'android' ? 35 : 0
+
     },
     title: {
         fontSize: 40,
