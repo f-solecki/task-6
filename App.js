@@ -24,6 +24,7 @@ const navigator = createMaterialTopTabNavigator({
 }, {
   initialRouteName: 'First',
   animationEnabled: true,
+  backBehavior: 'history',
   tabBarOptions: {
     showIcon: false,
     showLabel: false,
