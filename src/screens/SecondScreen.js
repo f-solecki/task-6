@@ -1,7 +1,25 @@
-import React from 'react';
-import { View, Text, Button, Image, StyleSheet, SafeAreaView } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, Button, Image, StyleSheet, SafeAreaView, BackHandler } from 'react-native';
 
 const SecondScreen = (props) => {
+
+    useEffect(() => {
+        const backAction = () => {
+            props.navigation.navigate('First')
+            return true;
+        };
+
+        const backHandler = BackHandler.addEventListener(
+            "hardwareBackPress",
+            backAction
+        );
+
+        return () => {
+            BackHandler.removeEventListener("hardwareBackPress",
+                () => backAction)
+        };
+    }, []);
+
     return (
         <SafeAreaView style={styles.container}>
             <Text style={styles.title}>React Navigation</Text>
